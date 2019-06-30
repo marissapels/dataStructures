@@ -9,3 +9,5 @@ METHOD 1
 METHOD 2
 - unshift adds value to beginning
 - pop removes value from end
+
+Real Life example: Waiting in line!
