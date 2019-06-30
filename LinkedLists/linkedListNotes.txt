@@ -1,0 +1,9 @@
+Linked Lists
+-A sequence of elements where one element links to the next element.
+-In an array, the elements are indexed.
+- In a linked list, if you have to go through each element to get to an indexed
+Addvantages: insertions and deletions can be very quick
+Disadvandtages: slow to get to the nth element
+
+Doubly Linked Lists
+Each element is also linked to the previous element
