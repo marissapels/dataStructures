@@ -76,8 +76,34 @@ class Tree {
     }
     return traverse(tree);
   }
-}
 
+  countLeaves() {
+    let tree = this;
+    let leafCount = 0;
+    const move = (node) => {
+      if (!node) return leafCount;
+      if (!node.left && !node.right) leafCount++;
+      if (node.left || node.right) {
+        if (node.left) {
+          move(node.left);
+        }
+        if (node.right) {
+          move(node.right);
+        }
+      }
+      return leafCount;
+    }
+    return move(tree);
+  }
+}
+  //         5
+  //       /   \
+  //      3     7
+  //     / \     \
+  //    2   4     9
+  //   /
+  //  1
+      
 let tree = new Tree();
 tree.add(5);
 tree.add(3);
@@ -86,7 +112,10 @@ tree.add(4);
 tree.add(9);
 tree.add(2);
 tree.add(1);
-console.log("tree: ", tree);
+// console.log("tree: ", tree);
 console.log("min: ", tree.findMin());
 console.log("max: ", tree.findMax());
 console.log("length: ", tree.findLength());
+console.log("leaves: ", tree.countLeaves());
+tree.add(6);
+console.log("leaves: ", tree.countLeaves());
